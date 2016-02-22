@@ -57,9 +57,9 @@ var jMess;
                     r[e].splice(i, 1);
                 };
             })(this._registry, eventToHook, indexOfDelegate);
-            this._registry[eventToHook].push(function () {
+            this._registry[eventToHook].push(function (data) {
                 cancelation();
-                delegate(arguments);
+                delegate(data);
             });
         };
         EventRegistry.prototype.raise = function (eventToRaise, data) {

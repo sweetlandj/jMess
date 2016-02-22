@@ -65,9 +65,9 @@ module jMess {
                 };
             })(this._registry, eventToHook, indexOfDelegate);
 
-            this._registry[eventToHook].push(function () {
+            this._registry[eventToHook].push(data => {
                 cancelation();
-                delegate(arguments);
+                delegate(data);
             });
         }
 
